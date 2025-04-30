@@ -7,6 +7,7 @@ if [[ "$target_platform" == linux-* ]]; then
   OUTPUT="bin/ds9"
 
 else
+  echo "PREFIX IS SET TO $PREFIX"
   ./macos/configure
   OUTPUT="bin/SAOImageDS9.app"
 
