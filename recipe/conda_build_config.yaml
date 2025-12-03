@@ -1,0 +1,26 @@
+c_compiler:
+    - gcc                           # [linux]
+    - clang                         # [osx]
+c_compiler_version:
+    - '13'                          # [linux]
+    - '18'                          # [osx]
+c_stdlib:
+    - sysroot                       # [linux]
+    - macosx_deployment_target      # [osx]
+c_stdlib_version:
+    - '2.17'                        # [linux]
+    - '10.13'                       # [osx]
+cxx_compiler:
+    - gxx                           # [linux]
+    - clangxx                       # [osx]
+cxx_compiler_version:
+    - '13'                          # [linux]
+    - '18'                          # [osx]
+target_platform:
+    - linux-64                      # [linux]
+    - osx-64                        # [osx]
+
+MACOSX_DEPLOYMENT_TARGET:           # [osx]
+    - '10.13'                       # [osx]
+MACOSX_SDK_VERSION:                 # [osx]
+    - '10.13'                       # [osx]
