@@ -30,6 +30,7 @@ requirements:
     - {{ compiler("c") }}
     - {{ compiler("cxx") }}
     - {{ stdlib("c") }}
+    - make
     - autoconf
     - m4
     - pkg-config
@@ -44,23 +45,20 @@ requirements:
     - xorg-libxft
     - xorg-xorgproto
     - zlib
+  run:
+    - xorg-libxcursor   # [linux]
+    - xorg-libxfixes    # [linux]
 
-outputs:
-  - name: ds9
-    requirements:
-      run:
-        - xorg-libxcursor   # [linux]
-        - xorg-libxfixes    # [linux]
-    test:
-      commands:
-        - ds9
+test:
+  commands:
+    - ds9 -help  # doesn't require a display, which might not exist
 
 about:
   home: https://github.com/SAOImageDS9/SAOImageDS9
   summary: SAOImage DS9 is an astronomical imaging and data visualization application
   license: GPL-3.0-only
-  license_file:
-    - LICENSE
+  license_family: GPL
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
