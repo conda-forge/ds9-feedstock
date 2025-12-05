@@ -31,7 +31,6 @@ requirements:
     - {{ compiler("cxx") }}
     - {{ stdlib("c") }}
     - make
-    - autoconf
     - m4
     - pkg-config
   host:

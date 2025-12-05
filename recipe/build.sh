@@ -34,6 +34,10 @@ make -j${CPU_COUNT}
 mkdir -p "$PREFIX/bin"
 cp -a bin/ds9* bin/x* "$PREFIX/bin/"
 
+# Ad-hoc signing is good practice on newer MacOS versions and avoids
+# "Killed: 9" on ARM. It's safest to do explicitly at the very end (including
+# xpa helper executables, to avoid broken communications). Conda-build repeats
+# this step after editing binary paths, but only if a signature already exists:
 if [[ "$target_platform" == osx-* ]]; then
-  codesign -s - -f "${PREFIX}/bin/ds9"
+  codesign -s - -f "${PREFIX}/bin/ds9" "${PREFIX}"/bin/xpa*
 fi
