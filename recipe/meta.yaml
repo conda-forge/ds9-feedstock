@@ -34,6 +34,7 @@ requirements:
     - automake
     - m4
     - pkg-config
+    - zip
   host:
     - expat
     - fontconfig
