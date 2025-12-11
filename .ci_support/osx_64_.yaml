@@ -24,11 +24,13 @@ fontconfig:
 - '2'
 freetype:
 - '2'
+icu:
+- '75'
 libiconv:
 - '1'
+liblzma_devel:
+- '5'
 libxml2:
-- '2.13'
-libxml2_devel:
 - '2.13'
 macos_machine:
 - x86_64-apple-darwin13.4.0
