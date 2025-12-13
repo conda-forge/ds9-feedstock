@@ -170,5 +170,4 @@ Feedstock Maintainers
 =====================
 
 * [@epassaro](https://github.com/epassaro/)
-* [@jehturner](https://github.com/jehturner/)
 
