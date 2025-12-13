@@ -1,5 +1,6 @@
 {% set name = "ds9" %}
 {% set version = "8.6" %}
+{% set number = "1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,42 +9,59 @@ package:
 source:
   url: https://github.com/SAOImageDS9/SAOImageDS9/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 41a3ea004a691b73fdebdfdd6b821d2620885b27ec3d157f7a79ae941187d843
+  patches:
+    - configure.patch
+    - Makefile.in.patch
+    - make.include.patch
+    - libtiff_configure.patch
+    - pngpriv.h.patch
+    - zutil.h.patch
 
 build:
-  number: 0
-  skip: true  # [not linux]
+  number: {{ number }}
+  skip: true  # [win]
+  ignore_run_exports:  # these are only *direct* deps at build time
+    - libexpat
+    - libxslt
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
     - {{ stdlib("c") }}
-    - {{ cdt('xorg-x11-proto-devel') }}
-    - {{ cdt('libxft-devel') }}
     - make
     - autoconf
     - automake
+    - m4
+    - pkg-config
     - zip
-
   host:
+    - expat
+    - fontconfig
+    - freetype
+    - icu            # remove once libxml2 is updated with libxml2-devel
     - libiconv
-    - liblzma-devel
+    - liblzma-devel  # remove once libxml2 is updated with libxml2-devel
     - libxml2
     - libxslt
     - xorg-libx11
     - xorg-libxft
+    - xorg-xorgproto
     - zlib
+  run:
+    - xorg-libxcursor   # [linux]
+    - xorg-libxfixes    # [linux]
 
 test:
-  commands: 
-    - ds9
+  commands:
+    - ds9 -help  # doesn't require a display, which might not exist
 
 about:
   home: https://github.com/SAOImageDS9/SAOImageDS9
   summary: SAOImage DS9 is an astronomical imaging and data visualization application
   license: GPL-3.0-only
-  license_file:
-    - LICENSE
+  license_family: GPL
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
