@@ -23,7 +23,7 @@ fontconfig:
 freetype:
 - '2'
 icu:
-- '75'
+- '78'
 libiconv:
 - '1'
 liblzma_devel:
