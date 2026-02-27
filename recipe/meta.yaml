@@ -40,8 +40,9 @@ requirements:
     - fontconfig
     - freetype
     - libiconv
-    # ds9 apparently links directly against lzma
-    # so we cannot remove this even with libxml2-devel
+    # ds9 apparently links directly against lzma and icu
+    # so we cannot remove these even with libxml2-devel
+    - icu
     - liblzma-devel
     - libxml2-devel
     - libxslt
