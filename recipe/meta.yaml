@@ -39,10 +39,12 @@ requirements:
     - expat
     - fontconfig
     - freetype
-    - icu            # remove once libxml2 is updated with libxml2-devel
     - libiconv
-    - liblzma-devel  # remove once libxml2 is updated with libxml2-devel
-    - libxml2
+    # ds9 apparently links directly against lzma and icu
+    # so we cannot remove these even with libxml2-devel
+    - icu
+    - liblzma-devel
+    - libxml2-devel
     - libxslt
     - xorg-libx11
     - xorg-libxft
