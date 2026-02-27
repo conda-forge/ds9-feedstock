@@ -1,6 +1,6 @@
 {% set name = "ds9" %}
 {% set version = "8.6" %}
-{% set number = "2" %}
+{% set number = "3" %}
 
 package:
   name: {{ name|lower }}
