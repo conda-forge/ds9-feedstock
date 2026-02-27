@@ -22,8 +22,6 @@ fontconfig:
 - '2'
 freetype:
 - '2'
-icu:
-- '75'
 libiconv:
 - '1'
 liblzma_devel:
