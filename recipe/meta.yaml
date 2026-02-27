@@ -1,6 +1,6 @@
 {% set name = "ds9" %}
 {% set version = "8.6" %}
-{% set number = "1" %}
+{% set number = "2" %}
 
 package:
   name: {{ name|lower }}
@@ -18,16 +18,11 @@ source:
     - zutil.h.patch
 
 build:
-<<<<<<< rebuild-libxml2214-0-1_hb9cbd1
-  number: 1
-  skip: true  # [not linux]
-=======
   number: {{ number }}
   skip: true  # [win]
   ignore_run_exports:  # these are only *direct* deps at build time
     - libexpat
     - libxslt
->>>>>>> main
 
 requirements:
   build:
@@ -46,13 +41,8 @@ requirements:
     - freetype
     - icu            # remove once libxml2 is updated with libxml2-devel
     - libiconv
-<<<<<<< rebuild-libxml2214-0-1_hb9cbd1
-    - liblzma-devel
-    - libxml2-devel
-=======
     - liblzma-devel  # remove once libxml2 is updated with libxml2-devel
-    - libxml2
->>>>>>> main
+    - libxml2-devel
     - libxslt
     - xorg-libx11
     - xorg-libxft
