@@ -1,5 +1,5 @@
 {% set name = "ds9" %}
-{% set version = "8.6" %}
+{% set version = "8.8.1" %}
 {% set number = "3" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/SAOImageDS9/SAOImageDS9/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 41a3ea004a691b73fdebdfdd6b821d2620885b27ec3d157f7a79ae941187d843
+  sha256: a3f8e7ee9dd051ad88593337c77edbb64a896841523541ac43c487ea823f33fa
   patches:
     - configure.patch
     - Makefile.in.patch
